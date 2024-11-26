@@ -1,0 +1,50 @@
+<script>
+    function fillExperienceInfo(selectElement) {
+        const selectedOption = selectElement.options[selectElement.selectedIndex];
+        const experienceInputId = selectElement.id.replace('experience_select_', '');
+        document.getElementById('company_' + experienceInputId).value = selectedOption.getAttribute('data-company');
+        document.getElementById('job_title_' + experienceInputId).value = selectedOption.getAttribute('data-job_title');
+        document.getElementById('job_description_' + experienceInputId).value = selectedOption.getAttribute('data-job_description');
+        document.getElementById('date1_' + experienceInputId).value = selectedOption.getAttribute('data-date1');
+        document.getElementById('date2_' + experienceInputId).value = selectedOption.getAttribute('data-date2');
+    }
+
+    let experienceFormCount = 1;
+
+    function addExperienceForm() {
+        experienceFormCount++;
+        const container = document.getElementById('experience-container');
+        const newForm = document.createElement('div');
+        newForm.classList.add('experience-form', 'mb-3');
+        newForm.innerHTML = `
+            <label for="experience_select_${experienceFormCount}" class="form-label">Select Experience</label>
+            <select id="experience_select_${experienceFormCount}" name="experience_select[]" class="form-control" onchange="fillExperienceInfo(this)">
+                <option value="">Select an experience</option>
+                {% for experience in experiences %}
+                    <option value="{{ experience.id }}" data-company="{{ experience.company }}" data-job_title="{{ experience.job_title }}" data-job_description="{{ experience.job_description }}" data-date1="{{ experience.date1 }}" data-date2="{{ experience.date2 }}">{{ experience.id }} - {{ experience.company }}</option>
+                {% endfor %}
+            </select>
+            <div class="mb-3">
+                <label for="company_${experienceFormCount}" class="form-label">Company</label>
+                <input type="text" id="company_${experienceFormCount}" name="company[]" class="form-control" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="job_title_${experienceFormCount}" class="form-label">Job Title</label>
+                <input type="text" id="job_title_${experienceFormCount}" name="job_title[]" class="form-control" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="job_description_${experienceFormCount}" class="form-label">Job Description</label>
+                <textarea id="job_description_${experienceFormCount}" name="job_description[]" class="form-control" rows="4" readonly></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="date1_${experienceFormCount}" class="form-label">Start Date</label>
+                <input type="text" id="date1_${experienceFormCount}" name="date1[]" class="form-control" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="date2_${experienceFormCount}" class="form-label">End Date</label>
+                <input type="text" id="date2_${experienceFormCount}" name="date2[]" class="form-control" readonly>
+            </div>
+        `;
+        container.appendChild(newForm);
+    }
+</script>

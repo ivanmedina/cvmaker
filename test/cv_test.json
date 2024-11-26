@@ -1,0 +1,20 @@
+{
+    "name": "Iván Medina",
+    "title": "Application Security & Web Penetration Tester",
+    "address": "City, State, Country",
+    "phone": "(52) 888 888 1234",
+    "email": "email.contact@email.com",
+    "languages": [
+        {"name": "English", "level": 70},
+        {"name": "Spanish", "level": 90}
+    ],
+    "school": "University of Systems",
+    "career": "Computer Systems Engineering",
+    "skills": ["PHP/Laravel", "Java/Spring", "ReactJS/NodeJS", "Web Penetration Testing"],
+    "certifications": ["eWPT", "eWPTX", "CBBH", "OSWE"],
+    "aboutme": "Passionate about application security and web penetration testing.",
+    "jobs": [
+        {"company": "Company A", "title": "Security Analyst", "date": "2022-2023", "description": "Responsible for security audits.", "technologies": "Kali Linux, Burp Suite"},
+        {"company": "Company B", "title": "Penetration Tester", "date": "2021-2022", "description": "Conducted vulnerability assessments.", "technologies": "Nmap, Metasploit"}
+    ]
+}

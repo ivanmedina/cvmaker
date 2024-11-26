@@ -1,0 +1,7 @@
+<div class="tab-pane fade" id="step2" role="tabpanel" aria-labelledby="step2-tab">
+    {% include 'create_cv/forms/studies.html' %}
+    {% include 'create_cv/forms/certifications.html' %}
+    <button class="btn btn-secondary mt-3" type="button" onclick="goToStep(1)">Back</button>
+    <button class="btn btn-primary mt-3" type="button" onclick="addCertificationForm()">Add Another Certification</button>
+    <button class="btn btn-primary mt-3 float-end" type="button" onclick="goToStep(3)">Next</button>
+</div>

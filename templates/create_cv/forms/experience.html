@@ -1,0 +1,32 @@
+<h2>Experience</h2>
+<div id="experience-container">
+  <div class="experience-form mb-3">
+    <label for="experience_select_1" class="form-label">Select Experience</label>
+    <select id="experience_select_1" name="experience_select[]" class="form-control" onchange="fillExperienceInfo(this)">
+      <option value="">Select an experience</option>
+      {% for experience in experiences %}
+        <option value="{{ experience.id }}" data-company="{{ experience.company }}" data-job_title="{{ experience.job_title }}" data-job_description="{{ experience.job_description }}" data-date1="{{ experience.date1 }}" data-date2="{{ experience.date2 }}">{{ experience.id }} - {{ experience.company }}</option>
+      {% endfor %}
+    </select>
+    <div class="mb-3">
+      <label for="company_1" class="form-label">Company</label>
+      <input type="text" id="company_1" name="company[]" class="form-control" readonly>
+    </div>
+    <div class="mb-3">
+      <label for="job_title_1" class="form-label">Job Title</label>
+      <input type="text" id="job_title_1" name="job_title[]" class="form-control" readonly>
+    </div>
+    <div class="mb-3">
+      <label for="job_description_1" class="form-label">Job Description</label>
+      <textarea id="job_description_1" name="job_description[]" class="form-control" rows="4" readonly></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="date1_1" class="form-label">Start Date</label>
+      <input type="text" id="date1_1" name="date1[]" class="form-control" readonly>
+    </div>
+    <div class="mb-3">
+      <label for="date2_1" class="form-label">End Date</label>
+      <input type="text" id="date2_1" name="date2[]" class="form-control" readonly>
+    </div>
+  </div>
+</div>

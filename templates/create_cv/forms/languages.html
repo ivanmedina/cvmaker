@@ -1,0 +1,18 @@
+<h2 class="mt-4">Languages</h2>
+<div class="mb-3">
+  <label for="language_select" class="form-label">Select Language</label>
+  <select id="language_select" name="language_select" class="form-control" onchange="fillLanguageInfo()">
+    <option value="">Select a language</option>
+    {% for language in languages %}
+      <option value="{{ language.id }}" data-name="{{ language.language_name }}" data-level="{{ language.language_level }}">{{ language.id }} - {{ language.language_name }}</option>
+    {% endfor %}
+  </select>
+</div>
+<div class="mb-3">
+  <label for="language_name" class="form-label">Language</label>
+  <input type="text" id="language_name" name="language_name" class="form-control" required>
+</div>
+<div class="mb-3">
+  <label for="language_level" class="form-label">Level</label>
+  <input type="number" id="language_level" name="language_level" class="form-control" required>
+</div>

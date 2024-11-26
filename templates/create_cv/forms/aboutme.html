@@ -1,0 +1,15 @@
+<h2>About Me</h2>
+<div class="mb-3">
+    <label for="about_me_select" class="form-label">Select About Me</label>
+    <select id="about_me_select" name="about_me_select" class="form-control" onchange="fillAboutMeInfo()">
+        <option value="">Select about me</option>
+        {% for about in about_me %}
+        <option value="{{ about.id }}" data-description="{{ about.description }}">{{ about.id }} -
+            {{ about.description }}</option>
+        {% endfor %}
+    </select>
+</div>
+<div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea id="description" name="description" class="form-control" rows="4" required></textarea>
+</div>

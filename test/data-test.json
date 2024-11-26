@@ -1,0 +1,37 @@
+{
+    "contact": {
+        "name": "Iván Medina",
+        "title": "Application Security & Web Penetration Tester",
+        "address": "City, State, Country",
+        "phone": "(52) 888 888 1234",
+        "email": "email.contact@email.com"
+    },
+    "language": {
+        "language_name": "English",
+        "language_level": "70"
+    },
+    "study": {
+        "school": "University of Systems",
+        "career": "Computer Systems Engineering",
+        "description": "Academic CTF Champion"
+    },
+    "skill": {
+        "skill": "PHP/Laravel"
+    },
+    "certification": {
+        "certification": "eWPT"
+    },
+    "experience": {
+        "company": "Company A",
+        "job_title": "Security Analyst",
+        "job_description": "Responsible for security audits.",
+        "date1": "July 2023",
+        "date2": "July 2024"
+    },
+    "site": {
+        "site_name": "https://example.com"
+    },
+    "about_me": {
+        "description": "Passionate about application security and web penetration testing."
+    }
+}

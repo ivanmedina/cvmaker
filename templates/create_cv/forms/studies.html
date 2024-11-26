@@ -1,0 +1,22 @@
+<h2>Studies</h2>
+<div class="mb-3">
+  <label for="study_select" class="form-label">Select Study</label>
+  <select id="study_select" name="study_select" class="form-control" onchange="fillStudyInfo()">
+    <option value="">Select a study</option>
+    {% for study in studies %}
+      <option value="{{ study.id }}" data-school="{{ study.school }}" data-career="{{ study.career }}" data-description="{{study.description}}">{{ study.id }} - {{ study.school }}</option>
+    {% endfor %}
+  </select>
+</div>
+<div class="mb-3">
+  <label for="school" class="form-label">School</label>
+  <input type="text" id="school" name="school" class="form-control" required>
+</div>
+<div class="mb-3">
+  <label for="career" class="form-label">Career</label>
+  <input type="text" id="career" name="career" class="form-control" required>
+</div>
+<div class="mb-3">
+  <label for="studies-description" class="form-label">Description</label>
+  <input type="text" id="studies-description" name="studies-description" class="form-control" required>
+</div>

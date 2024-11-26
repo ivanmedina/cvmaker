@@ -1,0 +1,16 @@
+<h2 class="mt-4">Certifications</h2>
+<div id="certification-container">
+  <div class="certification-form mb-3">
+    <label for="certification_select_1" class="form-label">Select Certification</label>
+    <select id="certification_select_1" name="certification_select[]" class="form-control" onchange="fillCertificationInfo(this)">
+      <option value="">Select a certification</option>
+      {% for certification in certifications %}
+        <option value="{{ certification.id }}" data-certification="{{ certification.certification }}">{{ certification.id }} - {{ certification.certification }}</option>
+      {% endfor %}
+    </select>
+    <div class="mb-3">
+      <label for="certification_1" class="form-label">Certification</label>
+      <input type="text" id="certification_1" name="certification[]" class="form-control" required>
+    </div>
+  </div>
+</div>

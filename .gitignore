@@ -1,0 +1,60 @@
+# Entorno virtual
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Archivos de configuración o claves sensibles
+*.env
+instance/
+config.py
+
+# Archivos de Python compilados
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Logs y bases de datos
+*.log
+*.sqlite3
+*.db
+
+# Archivos generados por herramientas de desarrollo
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Archivos de caché de Flask
+*.pid
+*.seed
+*.coverage
+htmlcov/
+
+# Archivos de paquetes Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Archivos de distribución
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# Docker
+docker-compose.override.yml
+*.dockerignore
+
+# Archivos relacionados con tests
+.pytest_cache/
+.tox/
+.coverage
+.cache/
+nose2-*.xml
+
+# Otros
+*.bak
+*.orig
+*.~tmp~

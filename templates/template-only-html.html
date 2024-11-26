@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV {{ name }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="cv-container">
+    <div class="left-column">
+      <h1 class="name">{{ name }}</h1>
+      <p class="title"><h3>{{ title }}</h3></p>        
+      <div class="contact-info">
+          <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> {{ address }}</p>
+          <p><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> {{ phone }}</p>
+          <p><i class="fas fa-envelope"></i> <strong>Email:</strong> {{ email }}</p>
+      </div>
+      <div class="languages">
+        <h2>Languages</h2>
+        {% for language in languages %}
+          <p>{{ language.name }}</p>
+          <div class="progress-bar">
+            <div class="progress" style="width: {{ language.level }}%;"></div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="studies">
+        <h2>Studies</h2>
+        <p>{{school}}<br>{{career}}</p>
+      </div>
+      <div class="skills">
+        <h2>Skills</h2>
+        <ul>
+          {% for skill in skills %}
+            <li>{{ skill }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="certs">
+        <h2>Certifications</h2>
+        <ul>
+          {% for cert in certifications %}
+            <li>{{ cert }}</li>
+          {% endfor %}
+        </ul>
+      </div>      
+      <div class="sites">
+        <h2>Sites</h2>
+        <p><a href="https://ivanmedina.github.io">ivanmedina.github.io</a></p>
+      </div>
+    </div>
+    <div class="right-column">
+      <img src="{{ url_for('static', filename='images/profile/profile.jpeg') }}" alt="Profile Picture" class="profile-picture">
+      <div class="about-me">
+        <h2>About Me</h2>
+          {{aboutme}}
+      </div>
+      <div class="experience">
+        <h2>Experience</h2>
+        {% for job in jobs %}
+          <div class="job">
+            <h3>{{ job['company'] }} – {{ job['title'] }}</h3>
+            <p><strong>{{ job['date'] }}</strong></p>
+            <p>{{ job['description'] }}</p>
+            <p><strong>Technologies:</strong> {{ job['technologies'] }}</p>
+          </div>
+        {% endfor %}
+    </div>
+  </div>
+</body>
+</html>

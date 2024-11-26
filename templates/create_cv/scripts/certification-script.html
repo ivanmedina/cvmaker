@@ -1,0 +1,30 @@
+<script>
+    function fillCertificationInfo(selectElement) {
+        const selectedOption = selectElement.options[selectElement.selectedIndex];
+        const certificationInputId = selectElement.id.replace('certification_select_', '');
+        document.getElementById('certification_' + certificationInputId).value = selectedOption.getAttribute('data-certification');
+    }
+
+    let certificationFormCount = 1;
+
+    function addCertificationForm() {
+        certificationFormCount++;
+        const container = document.getElementById('certification-container');
+        const newForm = document.createElement('div');
+        newForm.classList.add('certification-form', 'mb-3');
+        newForm.innerHTML = `
+            <label for="certification_select_${certificationFormCount}" class="form-label">Select Certification</label>
+            <select id="certification_select_${certificationFormCount}" name="certification_select[]" class="form-control" onchange="fillCertificationInfo(this)">
+                <option value="">Select a certification</option>
+                {% for certification in certifications %}
+                    <option value="{{ certification.id }}" data-certification="{{ certification.certification }}">{{ certification.id }} - {{ certification.certification }}</option>
+                {% endfor %}
+            </select>
+            <div class="mb-3">
+                <label for="certification_${certificationFormCount}" class="form-label">Certification</label>
+                <input type="text" id="certification_${certificationFormCount}" name="certification[]" class="form-control" required>
+            </div>
+        `;
+        container.appendChild(newForm);
+    }
+</script>

@@ -1,0 +1,110 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f9fc;
+}
+
+.cv-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    max-width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+.left-column {
+    background: #e8f0fa;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 5px solid #0077cc;
+}
+
+.right-column {
+    position: relative;
+}
+
+.name {
+    font-size: 36px;
+    margin: 0;
+    color: #0077cc;
+}
+
+.title h3 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-top: 10px;
+    color: #3a3a3a;
+}
+
+.last-name {
+    font-weight: bold;
+    color: #005fa3;
+}
+
+.profile-picture {
+    width: 72.25%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+    border: 3px solid #0077cc;
+}
+
+.progress-bar {
+    background: #e0e0e0;
+    border-radius: 5px;
+    height: 10px;
+}
+
+.progress {
+    background: #0077cc;
+    height: 100%;
+    border-radius: 5px;
+}
+
+h2 {
+    border-bottom: 2px solid #0077cc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    color: #0077cc;
+}
+
+p, ul, li {
+    margin: 5px 0;
+    color: #333;
+}
+
+.contact-info i {
+    margin-right: 8px;
+    font-size: 16px;
+    color: #0077cc;
+}
+
+.certs ul, .sites p {
+    color: #0077cc;
+}
+
+a {
+    color: #005fa3;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media print {
+    .cv-container {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .profile-picture {
+        display: block;
+    }
+}
